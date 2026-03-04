@@ -33,65 +33,46 @@ git clone https://github.com/your-username/nginx-ssl-setup.git
 cd nginx-ssl-setup
 
 ##2️⃣  Настройте конфиг под ваш домен
-
 Отредактируйте файл конфигурации:
-
 bash
 nano nginx/sites-available/nginx_site.conf
 Важно: Замените example.com на ваш реальный домен.
 
-
 ##3️⃣ Установите конфиг в Nginx
-
-Перейдите в папку проекта:
-
+#Перейдите в папку проекта:
 bash
 cd /home/user/nginx_ssl_setup
-Скопируйте конфигурацию:
-
+#Скопируйте конфигурацию:
 bash
 sudo cp nginx/sites-available/nginx_site.conf /etc/nginx/sites-available/
 sudo cp -r nginx/snippets /etc/nginx/
-Создайте симлинк для активации сайта:
-
+#Создайте симлинк для активации сайта:
 bash
 sudo ln -s /etc/nginx/sites-available/nginx_site.conf /etc/nginx/sites-enabled/
 
-
 ##4️⃣ Создайте директорию для сайта
-
-Создайте папку и перейдите в неё:
-
+#Создайте папку и перейдите в неё:
 bash
 cd /var/www && sudo mkdir -p html1 && cd html1
-Скопируйте тестовый сайт:
-
+#Скопируйте тестовый сайт:
 bash
 sudo cp /home/user/nginx_ssl_setup/site_gen.com .
 
-
 ##5️⃣ Настройте SSL
-
-Запустите скрипт настройки SSL:
-
+#Запустите скрипт настройки SSL:
 bash
 sudo ./scripts/init-ssl.sh localhost
-Для реального домена замените localhost на ваш домен.
-
+#Для реального домена замените localhost на ваш домен.
 
 ##6️⃣ Проверьте результат
-
-Проверьте конфигурацию Nginx:
-
+#Проверьте конфигурацию Nginx:
 bash
 sudo nginx -t
-Перезагрузите Nginx:
-
+#Перезагрузите Nginx:
 bash
 sudo systemctl reload nginx
 
-
-📋 Требования
+##📋 Требования
 ОС: Ubuntu/Debian (или любой Linux с Nginx)
 Nginx: версия 1.14+
 Certbot: для получения SSL-сертификатов
@@ -103,7 +84,7 @@ Certbot: для получения SSL-сертификатов
 Проверьте, что порты 80 и 443 открыты в firewall
 
 
-📚 Полезные команды
+##📚 Полезные команды
 Проверка SSL-сертификата
 
 bash
