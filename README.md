@@ -28,11 +28,11 @@ text
 
 ## 🚀 Быстрый старт
 
-### 1️⃣ Клонируйте репозиторий
+## 1️⃣ Клонируйте репозиторий
 ```bash
 git clone https://github.com/your-username/nginx-ssl-setup.git
 cd nginx-ssl-setup
-2️⃣ Настройте конфиг под ваш домен
+##2️⃣  Настройте конфиг под ваш домен
 
 Отредактируйте файл конфигурации:
 
@@ -40,7 +40,7 @@ bash
 nano nginx/sites-available/nginx_site.conf
 Важно: Замените example.com на ваш реальный домен.
 
-3️⃣ Установите конфиг в Nginx
+##3️⃣ Установите конфиг в Nginx
 
 Перейдите в папку проекта:
 
@@ -55,7 +55,7 @@ sudo cp -r nginx/snippets /etc/nginx/
 
 bash
 sudo ln -s /etc/nginx/sites-available/nginx_site.conf /etc/nginx/sites-enabled/
-4️⃣ Создайте директорию для сайта
+##4️⃣ Создайте директорию для сайта
 
 Создайте папку и перейдите в неё:
 
@@ -65,7 +65,7 @@ cd /var/www && sudo mkdir -p html1 && cd html1
 
 bash
 sudo cp /home/user/nginx_ssl_setup/site_gen.com .
-5️⃣ Настройте SSL
+##5️⃣ Настройте SSL
 
 Запустите скрипт настройки SSL:
 
@@ -73,7 +73,7 @@ bash
 sudo ./scripts/init-ssl.sh localhost
 Для реального домена замените localhost на ваш домен.
 
-6️⃣ Проверьте результат
+##6️⃣ Проверьте результат
 
 Проверьте конфигурацию Nginx:
 
