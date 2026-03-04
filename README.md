@@ -28,7 +28,6 @@ nginx_ssl_setup/
 ## 🚀 Быстрый старт
 
 ## 1️⃣ Клонируйте репозиторий
-```bash
 git clone https://github.com/your-username/nginx-ssl-setup.git
 cd nginx-ssl-setup
 
