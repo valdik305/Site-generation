@@ -27,7 +27,7 @@ nginx_ssl_setup/
 
 text
 
-## 🚀 Быстрый старт
+ 🚀 Быстрый старт
 
 1. **Клонируйте репозиторий**
    ```bash
@@ -35,28 +35,28 @@ text
    cd nginx-ssl-setup
 Настройте конфиг под ваш домен
 
-#Установите конфиг в Nginx
+Установите конфиг в Nginx
 bash
 cd /home/user/nginx_ssl_setup
 sudo cp nginx/sites-available/nginx_site.conf /etc/nginx/sites-available/
 sudo cp -r nginx/snippets /etc/nginx/
 sudo ln -s /etc/nginx/sites-available/nginx_site.conf /etc/nginx/sites-enabled/
 
-# Из корня переместите файл site_gen.com в дирректорию /var/www/html1
+Из корня переместите файл site_gen.com в дирректорию /var/www/html1
 cd /var/www && mkdir html1 && cd html1
 cp /home/user/nginx_ssl_setup/site_gen.com ./
 
-#Настройте SSL
+Настройте SSL
 bash
 sudo ./scripts/init-ssl.sh localhost
 
-#Проверьте результат
+Проверьте результат
 bash
 sudo nginx -t
 sudo systemctl reload nginx
 
 
-#Tребования
+Tребования
 Ubuntu/Debian (или любой Linux с Nginx)
 Nginx 1.14+
 Certbot
