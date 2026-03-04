@@ -24,7 +24,6 @@ nginx_ssl_setup/
 │ └── init-ssl.sh # Скрипт настройки SSL
 └── README.md
 
-text
 
 ## 🚀 Быстрый старт
 
@@ -32,6 +31,7 @@ text
 ```bash
 git clone https://github.com/your-username/nginx-ssl-setup.git
 cd nginx-ssl-setup
+
 ##2️⃣  Настройте конфиг под ваш домен
 
 Отредактируйте файл конфигурации:
@@ -39,6 +39,7 @@ cd nginx-ssl-setup
 bash
 nano nginx/sites-available/nginx_site.conf
 Важно: Замените example.com на ваш реальный домен.
+
 
 ##3️⃣ Установите конфиг в Nginx
 
@@ -55,6 +56,8 @@ sudo cp -r nginx/snippets /etc/nginx/
 
 bash
 sudo ln -s /etc/nginx/sites-available/nginx_site.conf /etc/nginx/sites-enabled/
+
+
 ##4️⃣ Создайте директорию для сайта
 
 Создайте папку и перейдите в неё:
@@ -65,6 +68,8 @@ cd /var/www && sudo mkdir -p html1 && cd html1
 
 bash
 sudo cp /home/user/nginx_ssl_setup/site_gen.com .
+
+
 ##5️⃣ Настройте SSL
 
 Запустите скрипт настройки SSL:
@@ -72,6 +77,7 @@ sudo cp /home/user/nginx_ssl_setup/site_gen.com .
 bash
 sudo ./scripts/init-ssl.sh localhost
 Для реального домена замените localhost на ваш домен.
+
 
 ##6️⃣ Проверьте результат
 
@@ -83,8 +89,9 @@ sudo nginx -t
 
 bash
 sudo systemctl reload nginx
-📋 Требования
 
+
+📋 Требования
 ОС: Ubuntu/Debian (или любой Linux с Nginx)
 Nginx: версия 1.14+
 Certbot: для получения SSL-сертификатов
@@ -94,8 +101,9 @@ Certbot: для получения SSL-сертификатов
 Замените localhost на ваш домен в скрипте init-ssl.sh
 Убедитесь, что DNS-записи указывают на ваш сервер
 Проверьте, что порты 80 и 443 открыты в firewall
-📚 Полезные команды
 
+
+📚 Полезные команды
 Проверка SSL-сертификата
 
 bash
@@ -116,12 +124,16 @@ sudo tail -f /var/log/nginx/error.log
 
 # Доступы
 sudo tail -f /var/log/nginx/access.log
+
+
 🛡️ Проверка безопасности
 
 После установки проверьте ваш сайт:
 
 SSL Labs Test — оценка SSL-конфигурации
 Security Headers — проверка заголовков
+
+
 📄 Лицензия
 
 MIT
