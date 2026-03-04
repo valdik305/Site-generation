@@ -35,17 +35,14 @@ text
    cd nginx-ssl-setup
 Настройте конфиг под ваш домен
 
-Установите конфиг в Nginx
-bash
+**Установите конфиг в Nginx**
+```bash
 cd /home/user/nginx_ssl_setup
-
 sudo cp nginx/sites-available/nginx_site.conf /etc/nginx/sites-available/
-
 sudo cp -r nginx/snippets /etc/nginx/
-
 sudo ln -s /etc/nginx/sites-available/nginx_site.conf /etc/nginx/sites-enabled/
 
-Из корня переместите файл site_gen.com в дирректорию /var/www/html1
+**Из корня переместите файл site_gen.com в дирректорию /var/www/html1**
 
 cd /var/www && mkdir html1 && cd html1
 cp /home/user/nginx_ssl_setup/site_gen.com ./
