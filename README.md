@@ -29,7 +29,7 @@ nginx_ssl_setup/
 
  1️⃣ Клонируйте репозиторий
  ```
-git clone https://github.com/your-username/nginx-ssl-setup.git
+git clone https://github.com/valdik/nginx-ssl-setup.git
 cd nginx-ssl-setup
 ```
 
