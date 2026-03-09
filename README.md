@@ -44,7 +44,7 @@ nano nginx/sites-available/nginx_site.conf
 ```
 cd /home/user/nginx_ssl_setup
 ```
-Скопируйте конфигурацию:
+Скопируйте конфигурацию!:
 ```
 sudo cp nginx/sites-available/nginx_site.conf /etc/nginx/sites-available/
 sudo cp -r nginx/snippets /etc/nginx/
