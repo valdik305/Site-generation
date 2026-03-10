@@ -29,7 +29,7 @@ nginx_ssl_setup/
 
  1️⃣ Клонируйте репозиторий
  ```
-git clone https://github.com/your-username/nginx-ssl-setup.git
+git clone https://github.com/valdik305/nginx-ssl-setup.git
 cd nginx-ssl-setup
 ```
 
@@ -44,7 +44,7 @@ nano nginx/sites-available/nginx_site.conf
 ```
 cd /home/user/nginx_ssl_setup
 ```
-Скопируйте конфигурацию:
+Скопируйте конфигурацию!:
 ```
 sudo cp nginx/sites-available/nginx_site.conf /etc/nginx/sites-available/
 sudo cp -r nginx/snippets /etc/nginx/
