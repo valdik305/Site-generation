@@ -1,0 +1,36 @@
+name: Deploy static site to nginx
+
+on:
+  push:
+    branches:
+      - main          # замените на master, если основная ветка так называется
+  workflow_dispatch:  # позволяет запускать вручную
+
+jobs:
+  deploy:
+    runs-on: self-hosted   # ваш раннер на сервере
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Copy files to nginx web directory
+        run: |
+          # Укажите путь к корневой директории вашего сайта в nginx
+          TARGET_DIR="/var/www/html"
+
+          # Создать папку, если её нет (на всякий случай)
+          sudo mkdir -p "$TARGET_DIR
+
+          # Скопировать все файлы из репозитория в целевой каталог
+          # --delete удаляет файлы, которых больше нет в репозитории
+          # --exclude исключает ненужные папки (например, .git)
+          sudo rsync -av --delete --exclude='.git' --exclude='.github' ./ "$TARGET_DIR/"
+
+          # Если у вас есть папка со скомпилированными файлами (например, dist),
+          # замените ./ на ./dist/ (раскомментируйте следующую строку)
+          # sudo rsync -av --delete ./dist/ "$TARGET_DIR/"
+
+      - name: Reload nginx
+        run: |
+          # Перезагружаем nginx, чтобы применить изменения (без прерывания соединений)
+          sudo systemctl reload nginx
