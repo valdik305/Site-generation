@@ -1,4 +1,4 @@
-# 🔒 Nginx + SSL Production Setup
+# 🔒 Nginx + SSL Production Setup!
 
 Готовая конфигурация моего сайта на Nginx с SSL-сертификатами от Let's Encrypt (Certbot), включающая лучшие практики безопасности и производительности.
 
